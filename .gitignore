@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# Build artifacts
+engine/story.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Env
+.env
+.env.local
