@@ -1,5 +1,6 @@
 <script>
     import { fly } from 'svelte/transition';
+    import { story } from '../store/story.js';
     export let textLines = [];
 
     // Simple parsing to detect trait interjections like "NOSTALGIA:"
@@ -14,6 +15,35 @@
             };
         }
         return { isTrait: false, text: line };
+    }
+
+    let currentlyPlaying = null;
+
+    // Reactive statement to monitor the audio queue
+    $: {
+        if ($story.audioQueue.length > 0) {
+            const nextAudio = $story.audioQueue[0];
+            if (currentlyPlaying !== nextAudio) {
+                currentlyPlaying = nextAudio;
+                
+                const globalAudio = document.getElementById('global-audio');
+                if (globalAudio) {
+                    globalAudio.src = nextAudio;
+                    globalAudio.onended = handleAudioEnd;
+                    globalAudio.play().catch(e => {
+                        console.warn('Audio playback failed or blocked:', e);
+                        handleAudioEnd();
+                    });
+                } else {
+                    handleAudioEnd();
+                }
+            }
+        }
+    }
+
+    function handleAudioEnd() {
+        currentlyPlaying = null;
+        story.playNextAudio();
     }
 </script>
 

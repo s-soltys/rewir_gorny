@@ -1,5 +1,5 @@
 <script>
-    import { onMount } from 'svelte';
+    import { onMount, tick } from 'svelte';
     import { story } from './store/story.js';
     import DialogueBox from './components/DialogueBox.svelte';
     import Choices from './components/Choices.svelte';
@@ -8,6 +8,24 @@
 
     let canvasElement;
     let sceneManager;
+    let gameStarted = false;
+
+    function startGame() {
+        gameStarted = true;
+        const globalAudio = document.getElementById('global-audio');
+        if (globalAudio) {
+            // Play a silent sound to unlock the audio element on the first user interaction
+            globalAudio.src = "data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA";
+            globalAudio.play().then(() => {
+                story.triggerKnot(null);
+            }).catch(e => {
+                console.log('Unlock failed:', e);
+                story.triggerKnot(null);
+            });
+        } else {
+            story.triggerKnot(null);
+        }
+    }
 
     onMount(() => {
         // Initialize PixiJS in the background canvas
@@ -19,6 +37,15 @@
         };
     });
 </script>
+
+<audio id="global-audio" class="hidden"></audio>
+
+{#if !gameStarted}
+    <div class="start-overlay" on:click={startGame} on:keydown={(e) => e.key === 'Enter' && startGame()} tabindex="0" role="button">
+        <h1 class="start-title">REWIR GÓRNY</h1>
+        <div class="start-instruction">CLICK ANYWHERE TO ENTER</div>
+    </div>
+{/if}
 
 <div class="layout">
     <div class="canvas-container">
@@ -45,6 +72,44 @@
 </div>
 
 <style>
+    .hidden {
+        display: none;
+    }
+
+    .start-overlay {
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-color: #0a0a0a;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: #c87533;
+    }
+
+    .start-title {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 3rem;
+        letter-spacing: 0.3em;
+        margin-bottom: 2rem;
+    }
+
+    .start-instruction {
+        font-family: 'IBM Plex Mono', monospace;
+        font-size: 0.8rem;
+        letter-spacing: 0.2em;
+        opacity: 0.5;
+        animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+        0% { opacity: 0.3; }
+        50% { opacity: 0.8; }
+        100% { opacity: 0.3; }
+    }
+
     .layout {
         display: flex;
         width: 100vw;

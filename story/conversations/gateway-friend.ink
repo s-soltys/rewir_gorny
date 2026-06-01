@@ -9,21 +9,21 @@
     - rel_gateway_friend >= 4:
         He pulls you into a hug before you can react. Not a back-slap hug — a real one, the kind that lasts two seconds too long and says everything neither of you will say out loud.
         
-        "Man. Fucking finally."
+        "Man. Fucking finally." # speaker: gateway_friend
         
         NOSTALGIA: He smells the same. Cigarettes and that cheap Adidas deodorant. Some things survive even the end of the world.
         
     - rel_gateway_friend >= 2:
         He nods. The universal Polish male greeting — a chin-lift that contains entire conversations.
         
-        "Hey. Thought I saw you coming from the station."
+        "Hey. Thought I saw you coming from the station." # speaker: gateway_friend
         
         NOSTALGIA: That nod. You've been exchanging that nod since you were fourteen. It's more honest than any handshake.
         
     - else:
         He looks at you for a moment, like he's deciding something. Then shrugs.
         
-        "Oh. You're back."
+        "Oh. You're back." # speaker: gateway_friend
         
         The "you're back" lands flat. Factual. The way you state the weather or a death.
         
@@ -58,11 +58,11 @@ PERCEPTION: His pupils are dilated. Not from the darkness — from exposure. He'
     -> friend_deeper
 
 * [You look like shit, man.]
-    "You look like shit, man."
+    "You look like shit, man." # speaker: gateway_friend
     
     He laughs. It's a real laugh — short, surprised, like you knocked it out of him.
     
-    "You too. Poznań is eating you alive. You've got that student look — the one where you're too tired to sleep and too awake to think."
+    "You too. Poznań is eating you alive. You've got that student look — the one where you're too tired to sleep and too awake to think." # speaker: gateway_friend
     
     NOSTALGIA: This. This is what you missed. Someone who insults you because they're paying attention.
     
@@ -79,7 +79,7 @@ PERCEPTION: His pupils are dilated. Not from the darkness — from exposure. He'
     
     He lets the silence hold for a full minute. The sky pulses. Green, copper, green.
     
-    Then, quietly: "Good that you're here."
+    Then, quietly: "Good that you're here." # speaker: gateway_friend
     
     NOSTALGIA: He won't say it louder. He won't say it again. That's the entire allotment of vulnerability for the evening.
     
@@ -97,7 +97,7 @@ A pulse of green light sweeps across the clearing. Stronger than the others — 
 ANXIETY: When someone says "don't freak out," the correct response is to begin freaking out immediately.
 
 * [I won't freak out. Show me.]
-    "Go ahead."
+    "Go ahead." # speaker: gateway_friend
     
     He reaches into the pocket of the denim jacket and pulls out something small. He holds it in his palm, under the green light.
     
@@ -114,7 +114,7 @@ ANXIETY: When someone says "don't freak out," the correct response is to begin f
     -> friend_closing
 
 * [I'm already freaking out. But go ahead.]
-    "I'm already afraid. But speak."
+    "I'm already afraid. But speak." # speaker: gateway_friend
     
     He almost smiles. Then he crouches and pushes the grass aside with his hand, exposing the bare earth.
     
@@ -137,19 +137,17 @@ ANXIETY: When someone says "don't freak out," the correct response is to begin f
 
 You both stand in silence. The sky pulses. The crystals — in his hand, in the soil — pulse with it, synchronized, as if they're all breathing the same breath.
 
-"I don't know what this is," he says finally.
+"I don't know what this is," he says finally. # speaker: gateway_friend
 
 {spoke_to_kiosk_woman:
-    "Pani Krawczyk at the kiosk said people are worried."
+    "Pani Krawczyk at the kiosk said people are worried." # speaker: protagonist
     
-    "Krawczyk worries about everything. She worried about Chernobyl, she worried about the election, she worries about the price of Popularne." He pauses. "But yeah. She's not wrong this time."
+    "Pani Krawczyk thinks the milk going bad is a government conspiracy. But yeah. People are worried. They just don't know what they're worried about yet." # speaker: gateway_friend
 }
 
 A light turns on in Block 7, third floor. Someone's silhouette passes behind the curtain. Normal life, happening thirty meters from something that isn't normal at all.
 
-"Listen," he says, turning to face you fully for the first time. The green light makes his eyes look older than they are. "Come back tomorrow. In the daylight. I want to show you the north end, where the — where it's thickest. And there's something in the forest, past the drainage ditch. Something I found but I haven't—"
-
-He stops. Swallows.
+"Listen," he says, turning to face you fully for the first time. The green light makes his eyes look older than they are. "I don't know anything. That's why I'm showing you. You're the smart one. You went to university." He kicks a clump of oxidized dirt. "Come back tomorrow. During the day. We're going to the old airfield. Everyone's meeting there." # speaker: gateway_friend
 
 "I haven't gone alone. I've been waiting for someone."
 
@@ -160,15 +158,15 @@ PERCEPTION: He's scared. The tells are there — the swallow, the broken syntax,
 ANXIETY: He's asking you to go deeper. Into the forest. Toward the source. This is the moment where the horror movie protagonist makes the choice that everyone in the audience screams at.
 
 * [I'll come. Tomorrow.]
-    "I'll come. Tomorrow."
+    "I'll come. Tomorrow." # speaker: protagonist
     
     He nods. The tension in his shoulders drops by a fraction — barely visible, but you've known him long enough to read the language of his posture.
     
-    "Cool."
+    "Cool." # speaker: gateway_friend
     
     He claps you on the shoulder — once, hard — and turns toward the blocks. The Metallica patch on his back catches the green light one more time.
     
-    "Get some sleep," he calls over his shoulder. "Your mother's been making chicken soup since Tuesday."
+    "Get some sleep," he calls over his shoulder. "Your mother's been making chicken soup since Tuesday." # speaker: gateway_friend
     
     NOSTALGIA: Chicken soup with thin noodles and carrots cut into coins. The taste of being forgiven for leaving.
     
@@ -180,9 +178,9 @@ ANXIETY: He's asking you to go deeper. Into the forest. Toward the source. This 
     -> END
 
 * [I don't know. This feels like something we should report.]
-    "Man, maybe we should tell someone. The city, the—"
+    "Man, maybe we should tell someone. The city, the—" # speaker: protagonist
     
-    "Who?" His voice is flat. "The mayor? The fire department? You want to call Warszawa and say 'our soil is growing copper crystals and the sky is the wrong color'? They'll send a psychiatrist before they send a geologist."
+    "Who?" His voice is flat. "The mayor? The fire department? You want to call Warszawa and say 'our soil is growing copper crystals and the sky is the wrong color'? They'll send a psychiatrist before they send a geologist." # speaker: gateway_friend
     
     PERCEPTION: He's not wrong. The infrastructure for this kind of response doesn't exist in a town of seventy thousand. The vocabulary doesn't exist in any town.
     

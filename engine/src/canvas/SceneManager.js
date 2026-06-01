@@ -15,6 +15,11 @@ export class SceneManager {
         
         this.environmentLayer = new PIXI.Container();
         this.entitiesLayer = new PIXI.Container();
+        
+        this.bgSprite = new PIXI.Sprite();
+        this.environmentLayer.addChild(this.bgSprite);
+        this.auroraGraphics = new PIXI.Graphics();
+        this.environmentLayer.addChild(this.auroraGraphics);
     }
 
     async init() {
@@ -38,6 +43,11 @@ export class SceneManager {
         });
 
         this.app.ticker.add((ticker) => this.update(ticker.deltaTime));
+        
+        this.setupAuroraEffect(); // Start aurora once
+
+        // Handle resize for background
+        window.addEventListener('resize', () => this.resizeBackground());
 
         // Listen to story state for scene changes
         this.unsubscribe = story.subscribe(state => {
@@ -45,6 +55,22 @@ export class SceneManager {
                 this.loadScene(state.currentScene);
             }
         });
+    }
+
+    resizeBackground() {
+        if (!this.bgSprite || !this.bgSprite.texture || this.bgSprite.texture.width === 0) return;
+        
+        // ensure we have a valid width, fallback to window innerWidth if canvas hasn't fully laid out
+        const width = this.app.screen.width || window.innerWidth / 2;
+        const height = this.app.screen.height || window.innerHeight;
+        
+        const scaleX = width / this.bgSprite.texture.width;
+        const scaleY = height / this.bgSprite.texture.height;
+        const scale = Math.max(scaleX, scaleY);
+        
+        this.bgSprite.scale.set(scale);
+        this.bgSprite.x = (width - this.bgSprite.width) / 2;
+        this.bgSprite.y = (height - this.bgSprite.height) / 2;
     }
 
     update(delta) {
@@ -62,96 +88,60 @@ export class SceneManager {
         }
     }
 
-    loadScene(sceneId) {
+    async loadScene(sceneId) {
+        if (this.currentSceneId === sceneId) return;
         this.currentSceneId = sceneId;
         
-        // Clear old scene
-        this.environmentLayer.removeChildren();
-        this.entitiesLayer.removeChildren();
         this.hotspots = [];
-        
-        const width = this.app.screen.width;
-        const height = this.app.screen.height;
+        this.entitiesLayer.removeChildren();
 
-        // Common background aurora
-        this.setupAuroraEffect();
+        // Load AI generated background image
+        try {
+            const texture = await PIXI.Assets.load(`/images/scenes/${sceneId}.jpeg`);
+            this.bgSprite.texture = texture;
+            this.bgSprite.alpha = 0.8; // Increased opacity for better visibility
+            this.resizeBackground();
+        } catch (e) {
+            console.warn(`Could not load background for ${sceneId}. Generate images first!`, e);
+            this.bgSprite.texture = PIXI.Texture.EMPTY;
+        }
+
+        const width = this.app.screen.width || window.innerWidth / 2;
+        const height = this.app.screen.height || window.innerHeight;
 
         // Spawn player in center by default
         this.player = new Player(width / 2, height / 2);
         this.entitiesLayer.addChild(this.player.graphics);
 
         if (sceneId === 'station') {
-            this.buildStationScene(width, height);
-        } else if (sceneId === 'the_blocks') {
-            this.buildBlocksScene(width, height);
+            const kioskHotspot = new Hotspot(width - 150, 100, 40, 'Kiosk', 'station_kiosk');
+            this.hotspots.push(kioskHotspot);
+            this.entitiesLayer.addChild(kioskHotspot.container);
         } else if (sceneId === 'the_clearing') {
-            this.buildClearingScene(width, height);
+            const firepit = new Hotspot(width * 0.6, height * 0.5, 30, 'Fire', 'gateway_friend_conversation');
+            this.hotspots.push(firepit);
+            this.entitiesLayer.addChild(firepit.container);
         }
     }
 
     setupAuroraEffect() {
-        const aurora = new PIXI.Graphics();
-        this.environmentLayer.addChild(aurora);
         let time = 0;
         this.app.ticker.add((ticker) => {
             time += ticker.deltaTime * 0.02;
-            aurora.clear();
-            const w = this.app.screen.width;
-            const h = this.app.screen.height;
-            aurora.moveTo(0, h * 0.2 + Math.sin(time) * 50);
-            aurora.bezierCurveTo(
+            this.auroraGraphics.clear();
+            const w = this.app.screen.width || window.innerWidth / 2;
+            const h = this.app.screen.height || window.innerHeight;
+            this.auroraGraphics.moveTo(0, h * 0.2 + Math.sin(time) * 50);
+            this.auroraGraphics.bezierCurveTo(
                 w * 0.3, h * 0.1 + Math.sin(time * 1.2) * 50,
                 w * 0.7, h * 0.3 + Math.cos(time * 0.8) * 50,
                 w, h * 0.2 + Math.cos(time) * 50
             );
-            aurora.stroke({ color: 0x7b8c73, width: 80, alpha: 0.05 + Math.sin(time * 2) * 0.02 });
+            this.auroraGraphics.stroke({ color: 0x7b8c73, width: 80, alpha: 0.1 + Math.sin(time * 2) * 0.05 });
         });
     }
 
-    buildStationScene(w, h) {
-        // Draw station building
-        const station = new PIXI.Graphics();
-        station.rect(50, 50, 200, 100);
-        station.fill({ color: 0x2a2a2a });
-        station.stroke({ color: 0x4a4a4a, width: 2 });
-        this.environmentLayer.addChild(station);
 
-        const stationText = new PIXI.Text('PIŁA GŁÓWNA', { fontFamily: 'IBM Plex Mono', fontSize: 16, fill: 0x888888 });
-        stationText.x = 60;
-        stationText.y = 60;
-        this.environmentLayer.addChild(stationText);
-
-        // Kiosk hotspot
-        const kioskHotspot = new Hotspot(w - 150, 100, 40, 'Kiosk', 'station_kiosk');
-        this.hotspots.push(kioskHotspot);
-        this.entitiesLayer.addChild(kioskHotspot.container);
-    }
-
-    buildBlocksScene(w, h) {
-        // Draw some brutalist blocks
-        for (let i = 0; i < 3; i++) {
-            const block = new PIXI.Graphics();
-            block.rect(w * 0.1 + i * (w * 0.3), h * 0.3, w * 0.2, h * 0.5);
-            block.fill({ color: 0x222222 });
-            block.stroke({ color: 0x333333, width: 2 });
-            this.environmentLayer.addChild(block);
-        }
-    }
-
-    buildClearingScene(w, h) {
-        // Draw forest edge
-        for (let i = 0; i < 10; i++) {
-            const tree = new PIXI.Graphics();
-            tree.circle(w * 0.8 + Math.random() * w * 0.2, Math.random() * h, 20 + Math.random() * 20);
-            tree.fill({ color: 0x1a2e1a });
-            this.environmentLayer.addChild(tree);
-        }
-
-        // Fire pit hotspot
-        const firepit = new Hotspot(w * 0.6, h * 0.5, 30, 'Fire', 'gateway_friend_conversation');
-        this.hotspots.push(firepit);
-        this.entitiesLayer.addChild(firepit.container);
-    }
 
     destroy() {
         if (this.unsubscribe) this.unsubscribe();
