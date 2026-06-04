@@ -26,6 +26,11 @@ class DialoguePanel {
         eventBus.addEventListener('story-restart', () => {
             this.clear();
         });
+
+        eventBus.addEventListener('story-active', () => {
+            this.clear();
+            this.show();
+        });
     }
 
     show() {
@@ -89,17 +94,19 @@ class DialoguePanel {
         this.content.querySelector('.story-end')?.remove();
 
         if (choices.length === 0) {
-            // End of chapter
+            // End of knot
             const endDiv = document.createElement('div');
             endDiv.className = 'story-end';
             endDiv.innerHTML = `
-                <div class="story-end__text">End of Chapter</div>
-                <button class="story-end__restart">Restart</button>
+                <button class="story-end__restart">Close</button>
             `;
             this.content.appendChild(endDiv);
 
             endDiv.querySelector('.story-end__restart')
-                .addEventListener('click', () => narrativeManager.restart());
+                .addEventListener('click', () => {
+                    this.hide();
+                    eventBus.dispatchEvent(new CustomEvent('story-idle'));
+                });
         } else {
             const container = document.createElement('div');
             container.className = 'choices-container';

@@ -4,7 +4,12 @@
 // ============================================================
 
 INCLUDE globals.ink
-INCLUDE chapters/ch01-homecoming.ink
-INCLUDE conversations/gateway-friend.ink
 
--> ch01_homecoming
+INCLUDE locations/loc_childhood_room.ink
+INCLUDE locations/loc_flat_hallway.ink
+INCLUDE locations/loc_street.ink
+INCLUDE locations/loc_forest.ink
+
+// Entry point is the childhood room
+-> loc_childhood_room
+

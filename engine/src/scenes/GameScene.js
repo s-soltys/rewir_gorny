@@ -37,7 +37,7 @@ export class GameScene extends Phaser.Scene {
 
         // --- Click-to-move input ---
         this.input.on('pointerdown', (pointer) => {
-            if (this.isTransitioning || !this.player) return;
+            if (this.isTransitioning || !this.player || this.isDialogueActive) return;
 
             // Ignore clicks over the right-side UI panel
             if (pointer.x > this.cameras.main.width - PANEL_WIDTH) return;
@@ -56,6 +56,10 @@ export class GameScene extends Phaser.Scene {
             }
         });
 
+        this.isDialogueActive = true; // True by default for prologue
+        eventBus.addEventListener('story-idle', () => this.isDialogueActive = false);
+        eventBus.addEventListener('story-active', () => this.isDialogueActive = true);
+
         // --- Listen for narrative scene changes ---
         this._onSceneChange = (e) => this.transitionToScene(e.detail.sceneId);
         eventBus.addEventListener('scene-change', this._onSceneChange);
@@ -69,7 +73,7 @@ export class GameScene extends Phaser.Scene {
         };
         eventBus.addEventListener('story-restart', this._onRestart);
 
-        // Show the dialogue panel
+        // Show the dialogue panel initially
         dialoguePanel.show();
 
         // Start the story
@@ -165,7 +169,9 @@ export class GameScene extends Phaser.Scene {
                 hs.y * worldH,
                 hs.radius,
                 hs.label,
-                hs.knot
+                hs.knot,
+                hs.spriteKey,
+                hs.hideCondition
             );
             this.hotspots.push(hotspot);
         }

@@ -11,6 +11,16 @@
   <!-- Phaser renders its canvas into this container -->
   <div id="game-container"></div>
 
+  <div id="ui-toggles">
+    <button id="toggle-quests-btn" class="ui-btn">Quests</button>
+    <button id="toggle-inventory-btn" class="ui-btn">Inventory</button>
+  </div>
+
+  <div id="side-panels" class="hidden">
+    <div id="quest-panel" class="status-panel"></div>
+    <div id="inventory-panel" class="status-panel"></div>
+  </div>
+
   <!-- Right-side dialogue panel (overlaid on game canvas) -->
   <div id="ui-panel">
     <div id="panel-header">

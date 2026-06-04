@@ -351,3 +351,89 @@ html, body {
     scrollbar-width: thin;
     scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
 }
+
+/* Status Panels (Inventory & Quests) */
+#side-panels {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 20px 10px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.status-panel h3 {
+    margin: 0 0 5px 0;
+    font-size: 14px;
+    color: var(--color-text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.status-panel ul {
+    margin: 0;
+    padding-left: 15px;
+    font-size: 14px;
+    color: var(--color-primary);
+}
+
+.quest {
+    font-size: 14px;
+    margin-bottom: 4px;
+    color: var(--color-text-main);
+}
+.quest.side-quest {
+    color: var(--color-primary);
+}
+
+/* UI Toggles */
+#ui-toggles {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.ui-btn {
+    background: rgba(20, 20, 20, 0.85);
+    border: 1px solid var(--color-primary);
+    color: var(--color-text-main);
+    padding: 8px 16px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.2s ease;
+}
+
+.ui-btn:hover {
+    background: var(--color-primary);
+    color: #000;
+}
+
+/* Update side panels to be floating rather than in dialogue panel */
+#side-panels {
+    position: absolute;
+    bottom: 60px;
+    left: 20px;
+    background: rgba(15, 15, 15, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 300px;
+    padding: 15px;
+    z-index: 999;
+    transition: opacity 0.3s ease;
+}
+
+#side-panels.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.status-panel {
+    display: none;
+}
+.status-panel.active {
+    display: block;
+}

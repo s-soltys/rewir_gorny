@@ -41,9 +41,16 @@ export class BootScene extends Phaser.Scene {
             bar.fillRect(barX, barY, barWidth * value, barHeight);
         });
 
-        // --- Load scene backgrounds ---
+        // --- Load scene backgrounds and sprites ---
         for (const [, scene] of Object.entries(SCENES)) {
             this.load.image(scene.key, scene.path);
+            if (scene.hotspots) {
+                for (const hs of scene.hotspots) {
+                    if (hs.spriteKey) {
+                        this.load.image(hs.spriteKey, `/images/sprites/${hs.spriteKey}.png`);
+                    }
+                }
+            }
         }
     }
 

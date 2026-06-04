@@ -92,6 +92,33 @@ class NarrativeManager {
                 detail: { queue: audioQueue }
             }));
         }
+
+        // Gather Inventory and Quests
+        try {
+            const invList = this.ink.variablesState['inventory'];
+            let inventoryItems = [];
+            if (invList) {
+                // invList is an InkList, its items are a map where keys are "listName.itemName" or just "itemName"
+                for (let key in invList) {
+                    // skip default empty value if any
+                    if (key !== 'inventory.none' && key !== 'none') {
+                        inventoryItems.push(key.split('.').pop());
+                    }
+                }
+            }
+            const qMain = this.ink.variablesState['quest_main'] || 'none';
+            const qSide = this.ink.variablesState['quest_side'] || 'none';
+
+            eventBus.dispatchEvent(new CustomEvent('story-state', {
+                detail: {
+                    inventory: inventoryItems,
+                    questMain: qMain !== 'none' ? qMain : null,
+                    questSide: qSide !== 'none' ? qSide : null
+                }
+            }));
+        } catch (e) {
+            console.error("Error reading story state", e);
+        }
     }
 
     /** Player selected a dialogue choice. */
@@ -107,6 +134,7 @@ class NarrativeManager {
             this.ink.ChoosePathString(knotName);
         }
         eventBus.dispatchEvent(new CustomEvent('audio-interrupt'));
+        eventBus.dispatchEvent(new CustomEvent('story-active'));
         this.advanceStory();
     }
 

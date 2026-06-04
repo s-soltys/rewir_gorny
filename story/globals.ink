@@ -4,24 +4,25 @@
 // ============================================================
 
 // --- Trait levels (scale 0-5) ---
-// These act as inner voices. Higher = louder, more insistent.
 VAR nostalgia = 1
 VAR perception = 1
 VAR anxiety = 1
 
-// --- Relationship values (scale 0-5) ---
-VAR rel_gateway_friend = 2
+// --- Inventory ---
+LIST inventory = (none), hat, childhood_toy, strange_coin
+
+// --- Quests ---
+VAR quest_main = "none"
+VAR quest_side = "none"
 
 // --- Story flags ---
-VAR has_seen_aurora = false
-VAR has_returned_to_clearing = false
-VAR chose_shortcut = false
-VAR spoke_to_kiosk_woman = false
+VAR has_toy = false
+VAR has_hat = false
+VAR spoken_to_parents = false
+VAR spoken_to_weirdo = false
+VAR chose_brave = false
 
 // --- Copper exposure tracker ---
-// Increments with proximity to the phenomenon. Effects at thresholds.
 VAR copper_exposure = 0
+VAR time_of_day = "morning"
 
-// --- Inventory / state ---
-VAR has_cigarette = false
-VAR time_of_day = "evening"
