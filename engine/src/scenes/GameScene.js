@@ -39,9 +39,6 @@ export class GameScene extends Phaser.Scene {
         this.input.on('pointerdown', (pointer) => {
             if (this.isTransitioning || !this.player || this.isDialogueActive) return;
 
-            // Ignore clicks over the right-side UI panel
-            if (pointer.x > this.cameras.main.width - PANEL_WIDTH) return;
-
             // Convert screen → world coordinates (accounts for camera scroll)
             const worldPoint = this.cameras.main.getWorldPoint(pointer.x, pointer.y);
 
@@ -215,11 +212,27 @@ export class GameScene extends Phaser.Scene {
             // Check hotspot proximity
             for (const hotspot of this.hotspots) {
                 if (
+                    !this.isDialogueActive &&
                     hotspot.active &&
                     this.player.distanceTo(hotspot.x, hotspot.y) < hotspot.radius + 15
                 ) {
-                    hotspot.hide();
+                    // Trigger the story
                     narrativeManager.triggerKnot(hotspot.knotName);
+                    
+                    // Push the player back slightly so they don't immediately re-trigger when dialogue ends
+                    const angle = Phaser.Math.Angle.Between(hotspot.x, hotspot.y, this.player.x, this.player.y);
+                    const safeDist = hotspot.radius + 20;
+                    this.player.container.setPosition(
+                        hotspot.x + Math.cos(angle) * safeDist,
+                        hotspot.y + Math.sin(angle) * safeDist
+                    );
+                    
+                    // Cancel current movement tween
+                    if (this.player.currentTween) {
+                        this.player.currentTween.destroy();
+                        this.player.currentTween = null;
+                        this.player.isMoving = false;
+                    }
                 }
                 hotspot.update(delta);
             }

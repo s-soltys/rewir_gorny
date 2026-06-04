@@ -21,23 +21,10 @@ export class Player {
         glow.strokeCircle(0, 0, 18);
         this.container.add(glow);
 
-        // Shadow ellipse (isometric feel)
-        const shadow = scene.add.graphics();
-        shadow.fillStyle(0x000000, 0.25);
-        shadow.fillEllipse(0, 10, 28, 10);
-        this.container.add(shadow);
-
-        // Main body
-        const body = scene.add.graphics();
-        body.fillStyle(0xffffff, 0.9);
-        body.fillCircle(0, 0, 12);
-        this.container.add(body);
-
-        // Center pip
-        const pip = scene.add.graphics();
-        pip.fillStyle(0xc87533, 0.8);
-        pip.fillCircle(0, 0, 3);
-        this.container.add(pip);
+        // Player Sprite
+        this.sprite = scene.add.sprite(0, 0, 'sprite_player');
+        this.sprite.setScale(0.15); // Scale down the generated sprite
+        this.container.add(this.sprite);
 
         // Breathing glow animation
         this.glowGraphics = glow;
