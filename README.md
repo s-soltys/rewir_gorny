@@ -4,45 +4,92 @@ An interactive narrative game set in the concrete veins of Upper Silesia, 1996. 
 
 ## Quick Start
 
-1. **Install Inklecate** — the Ink compiler:
-   Download from [inklecate releases](https://github.com/inkle/ink/releases) or install via your package manager.
+```bash
+# Install dependencies
+cd engine && npm install
 
-2. **Compile the story** to JSON:
-   ```bash
-   inklecate -j ink/main.ink -o engine/story.json
-   ```
+# Start the dev server
+npm run dev
+```
 
-3. **Open the player** — serve `engine/` with any local server:
-   ```bash
-   # Python
-   cd engine && python3 -m http.server 8000
+Open `http://localhost:5173` in your browser.
 
-   # Node
-   npx serve engine
-   ```
+## Technology Stack
 
-4. Open `http://localhost:8000` in your browser.
+| Layer | Technology |
+|-------|-----------|
+| Game Engine | [Phaser 3.90.0](https://phaser.io/) — isometric 2D, camera scrolling, scene management |
+| Narrative | [InkJS 2.4](https://github.com/y-lohse/inkjs) — branching dialogue and story logic |
+| UI | Vanilla DOM + CSS — right-side dialogue panel overlaid on game canvas |
+| Audio | [Kokoro TTS](https://openrouter.ai/) via OpenRouter — AI-generated character voices |
+| Build | [Vite 8](https://vite.dev/) — custom plugin compiles `.ink` → JSON at import time |
 
 ## File Structure
 
 ```
 rewir_gorny/
-├── engine/             # Web player
-│   ├── index.html      # Single-page app shell
-│   ├── style.css       # Atmospheric dark theme
-│   ├── app.js          # Inkjs integration
-│   └── story.json      # Compiled story (build artifact)
-├── ink/                # Ink source files
-│   └── main.ink        # Story entry point
-├── docs/               # Documentation
-│   ├── style-guide.md  # Writing conventions
-│   └── ink-cheatsheet.md
-├── README.md
-└── .gitignore
+├── engine/                     # Game application
+│   ├── src/
+│   │   ├── main.js             # Entry point
+│   │   ├── config.js           # Phaser config
+│   │   ├── style.css           # All UI styling
+│   │   ├── EventBus.js         # Cross-module event system
+│   │   ├── scenes/             # Phaser scenes (Boot, Title, Game)
+│   │   ├── world/              # Player, Hotspot, WalkZone, SceneData
+│   │   ├── narrative/          # NarrativeManager (InkJS), AudioManager
+│   │   ├── ui/                 # DialoguePanel, SceneBadge (DOM overlays)
+│   │   └── effects/            # AuroraEffect (copper-green animation)
+│   ├── public/
+│   │   ├── images/scenes/      # AI-generated scene backgrounds
+│   │   └── audio/              # TTS voice WAV files
+│   ├── scripts/
+│   │   ├── generate_voices.js  # Kokoro TTS pipeline
+│   │   └── generate_images.js  # AI background generation
+│   ├── index.html
+│   ├── vite.config.js
+│   └── package.json
+├── story/                      # Ink narrative source
+│   ├── main.ink                # Master file (entry point)
+│   ├── globals.ink             # Variable declarations
+│   ├── chapters/               # Chapter ink files
+│   └── conversations/          # Dialogue ink files
+├── world/                      # World bible
+│   ├── setting.md              # Physical world description
+│   ├── pillars.md              # Thematic pillars
+│   ├── characters/             # Character profiles
+│   └── locations/              # Location profiles
+├── docs/                       # Documentation
+│   ├── architecture.md         # Technical architecture
+│   ├── style-guide.md          # Writing conventions
+│   ├── ink-cheatsheet.md       # Ink syntax reference
+│   └── agents/                 # AI agent persona docs
+├── mood/                       # Visual reference material
+├── AGENT_INSTRUCTIONS.md       # AI agent working rules
+└── README.md
 ```
+
+## NPM Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start Vite dev server with hot reload |
+| `npm run build` | Production build to `dist/` |
+| `npm run preview` | Preview production build |
+| `npm run test:ink` | Compile and validate the Ink story |
+| `npm run generate-voices` | Generate TTS WAV files for all dialogue |
+| `npm run generate-images` | Generate AI background images for all scenes |
+
+## For AI Agents
+
+Read `AGENT_INSTRUCTIONS.md` before performing any work. It contains:
+- File boundaries (what you can and cannot edit)
+- Mandatory testing protocol
+- Architectural quirks
+- Continuous improvement guidelines
 
 ## Links
 
 - [Ink documentation](https://github.com/inkle/ink/blob/master/Documentation/WritingWithInk.md)
 - [inkjs (JavaScript runtime)](https://github.com/y-lohse/inkjs)
-- [Inklecate releases](https://github.com/inkle/ink/releases)
+- [Phaser 3 documentation](https://docs.phaser.io/)
+- [Phaser 3 examples](https://labs.phaser.io/)
