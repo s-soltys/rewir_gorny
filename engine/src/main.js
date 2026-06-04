@@ -1,8 +1,11 @@
-import { mount } from 'svelte';
-import App from './App.svelte';
+import './style.css';
+import Phaser from 'phaser';
+import { gameConfig } from './config.js';
 
-const app = mount(App, {
-  target: document.getElementById('app'),
-})
+// Import UI modules to initialize their event listeners (singletons)
+import './ui/DialoguePanel.js';
+import './ui/SceneBadge.js';
+import './narrative/AudioManager.js';
 
-export default app;
+// Launch the game
+const game = new Phaser.Game(gameConfig);

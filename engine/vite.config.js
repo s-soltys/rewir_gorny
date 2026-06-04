@@ -1,5 +1,4 @@
 import { defineConfig } from 'vite'
-import { svelte } from '@sveltejs/vite-plugin-svelte'
 import { execSync } from 'child_process'
 import fs from 'fs'
 
@@ -32,5 +31,5 @@ function inkPlugin() {
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [svelte(), inkPlugin()],
+  plugins: [inkPlugin()],
 })

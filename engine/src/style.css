@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'IBM Plex Mono', monospace;
+    background: #0a0a0a;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* ============================================================
+   GAME CANVAS CONTAINER
+   ============================================================ */
+
+#game-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}
+
+#game-container canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* ============================================================
+   RIGHT-SIDE DIALOGUE PANEL
+   ============================================================ */
+
+#ui-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 420px;
+    height: 100vh;
+    background: rgba(10, 10, 10, 0.88);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-left: 1px solid rgba(200, 117, 51, 0.12);
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    pointer-events: none;
+}
+
+#ui-panel.visible {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+/* --- Panel Header --- */
+
+#panel-header {
+    text-align: center;
+    padding: 2rem 1.5rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    flex-shrink: 0;
+}
+
+#panel-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.25rem;
+    font-weight: 300;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.85);
+    position: relative;
+    display: inline-block;
+}
+
+#panel-title::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 1px;
+    background: #c87533;
+    opacity: 0.6;
+}
+
+#panel-subtitle {
+    margin-top: 1rem;
+    font-size: 0.6rem;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+/* --- Dialogue Scroll Area --- */
+
+#dialogue-scroll {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.5rem 2rem 4rem;
+    scroll-behavior: smooth;
+}
+
+#dialogue-content {
+    display: flex;
+    flex-direction: column;
+}
+
+/* --- Text Lines --- */
+
+.dialogue-line {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+    font-size: 0.9rem;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: slideUp 0.6s ease-out forwards;
+}
+
+/* --- Trait Interjections (NOSTALGIA, PERCEPTION, ANXIETY) --- */
+
+.trait-line {
+    font-style: italic;
+    padding: 0.5rem 0 0.5rem 1rem;
+    margin: 1rem 0 1.5rem;
+    border-left: 2px solid;
+    font-size: 0.875rem;
+    line-height: 1.6;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: slideUp 0.6s ease-out forwards;
+}
+
+.trait-label {
+    font-weight: 600;
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: 0.6875rem;
+    letter-spacing: 0.1em;
+    margin-right: 0.5rem;
+}
+
+.trait--nostalgia {
+    color: #648296;
+    border-left-color: #648296;
+}
+
+.trait--perception {
+    color: #7b8c73;
+    border-left-color: #7b8c73;
+}
+
+.trait--anxiety {
+    color: #9c5c5c;
+    border-left-color: #9c5c5c;
+}
+
+/* ============================================================
+   CHOICE BUTTONS
+   ============================================================ */
+
+.choices-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.choice-btn {
+    display: block;
+    width: 100%;
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 2px;
+    color: rgba(255, 255, 255, 0.85);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(8px);
+    animation: slideUp 0.5s ease-out forwards;
+}
+
+.choice-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 0;
+    height: 100%;
+    transform: translateY(-50%);
+    background: linear-gradient(90deg, rgba(200, 117, 51, 0.1) 0%, transparent 100%);
+    transition: width 0.3s ease-out;
+}
+
+.choice-btn:hover {
+    border-color: #c87533;
+    background: rgba(200, 117, 51, 0.05);
+    box-shadow: 0 0 20px rgba(200, 117, 51, 0.06), inset 0 0 20px rgba(200, 117, 51, 0.03);
+    transform: translateX(2px);
+}
+
+.choice-btn:hover::before {
+    width: 60%;
+}
+
+.choice-btn:active {
+    transform: translateX(2px) scale(0.995);
+}
+
+/* ============================================================
+   STORY END
+   ============================================================ */
+
+.story-end {
+    text-align: center;
+    padding: 3rem 0;
+    opacity: 0;
+    animation: slideUp 0.8s ease-out forwards;
+}
+
+.story-end__text {
+    font-size: 1.25rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.4);
+    margin-bottom: 2rem;
+}
+
+.story-end__restart {
+    padding: 0.5rem 2rem;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    color: #c87533;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.story-end__restart:hover {
+    border-color: #c87533;
+    background: rgba(200, 117, 51, 0.1);
+    box-shadow: 0 0 30px rgba(200, 117, 51, 0.08);
+}
+
+/* ============================================================
+   SCENE BADGE (Top-Left Location Indicator)
+   ============================================================ */
+
+#scene-badge {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 50;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: rgba(10, 10, 10, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #c87533;
+    padding: 6px 14px;
+    border: 1px solid rgba(200, 117, 51, 0.3);
+    border-radius: 2px;
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    pointer-events: none;
+}
+
+#scene-badge.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%   { opacity: 0.3; }
+    50%  { opacity: 0.8; }
+    100% { opacity: 0.3; }
+}
+
+/* ============================================================
+   CUSTOM SCROLLBAR
+   ============================================================ */
+
+#dialogue-scroll::-webkit-scrollbar {
+    width: 4px;
+}
+
+#dialogue-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#dialogue-scroll::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+}
+
+#dialogue-scroll::-webkit-scrollbar-thumb:hover {
+    background: #c87533;
+}
+
+/* Firefox scrollbar */
+#dialogue-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+}

@@ -1,7 +1,7 @@
 {
-  "name": "engine",
+  "name": "rewir-gorny",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -12,15 +12,12 @@
     "test:ink": "npx inkjs-compiler ../story/main.ink"
   },
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^7.1.2",
-    "openai": "^6.41.0",
-    "svelte": "^5.55.5",
     "vite": "^8.0.12"
   },
   "dependencies": {
     "dotenv": "^17.4.2",
     "inkjs": "^2.4.0",
     "md5": "^2.3.0",
-    "pixi.js": "^8.18.1"
+    "phaser": "3.90.0"
   }
 }

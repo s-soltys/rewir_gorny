@@ -1,13 +1,33 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>engine</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rewir Górny — Interactive Narrative</title>
+  <meta name="description" content="An interactive narrative game set in the concrete veins of Upper Silesia, 1996. Navigate a crumbling post-industrial landscape through internal monologue, sensory perception, and dialogue.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <!-- Phaser renders its canvas into this container -->
+  <div id="game-container"></div>
+
+  <!-- Right-side dialogue panel (overlaid on game canvas) -->
+  <div id="ui-panel">
+    <div id="panel-header">
+      <h1 id="panel-title">Rewir Górny</h1>
+      <div id="panel-subtitle">Osiedle Górne, 1996</div>
+    </div>
+    <div id="dialogue-scroll">
+      <div id="dialogue-content"></div>
+    </div>
+  </div>
+
+  <!-- Location indicator badge (top-left overlay) -->
+  <div id="scene-badge"></div>
+
+  <!-- Hidden audio element for TTS voice playback -->
+  <audio id="global-audio"></audio>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
 </html>
