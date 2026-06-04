@@ -33,4 +33,10 @@ function inkPlugin() {
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [inkPlugin(), svelte()],
+  server: {
+    allowedHosts: [
+      'mai-twins-well-raid.trycloudflare.com',
+      '.trycloudflare.com'
+    ],
+  },
 })

@@ -2,7 +2,7 @@ import { Story } from 'inkjs/engine/Story';
 import storyData from '../../../story/main.ink';
 import md5 from 'md5';
 import { eventBus } from '../EventBus.js';
-import { hasItem, checkStat, addItem, modifyStat } from '../state/gameStore.js';
+import { hasItem, checkStat, addItem, modifyStat, statsStore, inventoryStore, activeQuestsStore } from '../state/gameStore.js';
 
 /**
  * Wraps the inkjs Story instance and translates Ink output into
@@ -111,31 +111,45 @@ class NarrativeManager {
             }));
         }
 
-        // Gather Inventory and Quests
+        // Sync Ink -> Svelte stores (Ink is source of truth)
+        this.syncGameState();
+    }
+
+    /** Sync Ink state variables into Svelte stores. */
+    syncGameState() {
+        // Read Ink variables and push to Svelte stores
+        statsStore.set({
+            nostalgia: this.ink.variablesState['nostalgia'] ?? 1,
+            perception: this.ink.variablesState['perception'] ?? 1,
+            anxiety: this.ink.variablesState['anxiety'] ?? 1
+        });
+
+        // Sync inventory: read InkList, write to inventoryStore
         try {
             const invList = this.ink.variablesState['inventory'];
-            let inventoryItems = [];
+            const items = [];
             if (invList) {
-                // invList is an InkList, which behaves like a Map in inkjs
                 for (let [key, value] of invList) {
-                    // skip default empty value if any
                     if (key !== 'inventory.none' && key !== 'none') {
-                        inventoryItems.push(key.split('.').pop());
+                        items.push(key.split('.').pop());
                     }
                 }
             }
-            const qMain = this.ink.variablesState['quest_main'] || 'none';
-            const qSide = this.ink.variablesState['quest_side'] || 'none';
-
-            eventBus.dispatchEvent(new CustomEvent('story-state', {
-                detail: {
-                    inventory: inventoryItems,
-                    questMain: qMain !== 'none' ? qMain : null,
-                    questSide: qSide !== 'none' ? qSide : null
-                }
-            }));
+            inventoryStore.set(items);
         } catch (e) {
-            console.error("Error reading story state", e);
+            console.error("Error syncing inventory", e);
+        }
+
+        // Sync quests: read Ink variables, write to activeQuestsStore
+        try {
+            const quests = [];
+            const qMain = this.ink.variablesState['quest_main'];
+            const qSide = this.ink.variablesState['quest_side'];
+            if (qMain && qMain !== 'none') quests.push(qMain);
+            if (qSide && qSide !== 'none') quests.push(qSide);
+            activeQuestsStore.set(quests);
+        } catch (e) {
+            console.error("Error syncing quests", e);
         }
     }
 

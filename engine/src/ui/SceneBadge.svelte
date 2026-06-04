@@ -1,5 +1,6 @@
 <script>
     import { onMount, onDestroy } from 'svelte';
+    import { fade } from 'svelte/transition';
     import { eventBus } from '../EventBus.js';
 
     let sceneName = '';
@@ -24,7 +25,7 @@
 </script>
 
 {#if sceneName}
-<div id="scene-badge" class="svelte-scene-badge">
+<div id="scene-badge" class="svelte-scene-badge" transition:fade={{ duration: 400 }}>
     {sceneName}
 </div>
 {/if}

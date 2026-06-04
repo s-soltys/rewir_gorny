@@ -69,6 +69,19 @@ export class GameScene extends Phaser.Scene {
         };
         eventBus.addEventListener('story-restart', this._onRestart);
 
+        this._onPlayerChoice = (e) => {
+            narrativeManager.makeChoice(e.detail.index);
+        };
+        eventBus.addEventListener('player-choice', this._onPlayerChoice);
+
+        // Camera offset resize handling
+        this._onResize = () => {
+            if (this.player) {
+                this.cameras.main.setFollowOffset(-PANEL_WIDTH / 2, 0);
+            }
+        };
+        window.addEventListener('resize', this._onResize);
+
         // Start the story
         narrativeManager.start();
 
@@ -210,14 +223,21 @@ export class GameScene extends Phaser.Scene {
                 if (
                     !this.isDialogueActive &&
                     hotspot.active &&
+                    !hotspot.cooldown &&
                     this.player.distanceTo(hotspot.x, hotspot.y) < hotspot.radius + 15
                 ) {
                     // Trigger the story
                     narrativeManager.triggerKnot(hotspot.knotName);
                     
+                    // Set cooldown
+                    hotspot.cooldown = true;
+                    this.time.delayedCall(2000, () => {
+                        hotspot.cooldown = false;
+                    });
+                    
                     // Push the player back slightly so they don't immediately re-trigger when dialogue ends
                     const angle = Phaser.Math.Angle.Between(hotspot.x, hotspot.y, this.player.x, this.player.y);
-                    const safeDist = hotspot.radius + 20;
+                    const safeDist = hotspot.radius + 60;
                     this.player.container.setPosition(
                         hotspot.x + Math.cos(angle) * safeDist,
                         hotspot.y + Math.sin(angle) * safeDist
@@ -247,6 +267,10 @@ export class GameScene extends Phaser.Scene {
     shutdown() {
         eventBus.removeEventListener('scene-change', this._onSceneChange);
         eventBus.removeEventListener('story-restart', this._onRestart);
+        eventBus.removeEventListener('player-choice', this._onPlayerChoice);
+        if (this._onResize) {
+            window.removeEventListener('resize', this._onResize);
+        }
 
         if (this.player) this.player.destroy();
         this.hotspots.forEach(h => h.destroy());

@@ -13,7 +13,7 @@
 <div class="svelte-ui-root">
     <!-- Overlay UI Toggles -->
     <div id="ui-toggles">
-        <button class="ui-btn" on:click={toggleInventory}>Inventory & Stats</button>
+        <button class="ui-btn" onclick={toggleInventory}>Inventory & Stats</button>
     </div>
 
     <!-- Main Components -->

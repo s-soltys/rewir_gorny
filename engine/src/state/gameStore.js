@@ -2,16 +2,15 @@ import { writable } from 'svelte/store';
 
 // Basic Character Stats
 export const statsStore = writable({
-    logic: 10,
-    perception: 10,
-    kombinatorstwo: 10, // Example of a Silesian-themed skill
-    nostalgia: 10
+    nostalgia: 1,
+    perception: 1,
+    anxiety: 1
 });
 
-// Inventory (simple list of item string IDs)
+// Inventory (simple list of item string IDs, mirrors Ink's variablesState['inventory'])
 export const inventoryStore = writable([]);
 
-// Active Quests (simple list of active quest IDs)
+// Active Quests (simple list of active quest IDs, mirrors Ink's quest variables)
 export const activeQuestsStore = writable([]);
 
 // Helper actions

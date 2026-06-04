@@ -12,16 +12,15 @@
 <div class="side-panel active">
     <div class="panel-header-small">
         <h2>Inventory & Stats</h2>
-        <button on:click={closePanel} class="close-btn">×</button>
+        <button onclick={closePanel} class="close-btn">×</button>
     </div>
     
     <div class="panel-content">
         <h3>Stats</h3>
         <ul class="stats-list">
-            <li>Logic: {$statsStore.logic}</li>
             <li>Perception: {$statsStore.perception}</li>
-            <li>Kombinatorstwo: {$statsStore.kombinatorstwo}</li>
             <li>Nostalgia: {$statsStore.nostalgia}</li>
+            <li>Anxiety: {$statsStore.anxiety}</li>
         </ul>
 
         <h3>Items</h3>

@@ -1,17 +1,25 @@
 <script>
-    import { onMount, onDestroy } from 'svelte';
+    import { onMount, onDestroy, tick } from 'svelte';
+    import { fade } from 'svelte/transition';
     import { eventBus } from '../EventBus.js';
-    import { narrativeManager } from '../narrative/NarrativeManager.js';
 
     let currentLines = [];
     let currentChoices = [];
     let isVisible = false;
+    let dialogueScroll;
+
+    async function scrollToBottom() {
+        await tick();
+        if (dialogueScroll) {
+            dialogueScroll.scrollTop = dialogueScroll.scrollHeight;
+        }
+    }
 
     // Use eventBus to listen to story updates
     function handleStoryText(e) {
         isVisible = true;
         currentLines = [...currentLines, ...e.detail.lines];
-        // simple auto scroll could be implemented here
+        scrollToBottom();
     }
 
     function handleStoryChoices(e) {
@@ -53,7 +61,7 @@
 
     function makeChoice(index) {
         currentChoices = []; // Hide choices immediately
-        narrativeManager.makeChoice(index);
+        eventBus.dispatchEvent(new CustomEvent('player-choice', { detail: { index } }));
     }
 
     function closeDialogue() {
@@ -63,13 +71,13 @@
 </script>
 
 {#if isVisible}
-<div id="ui-panel" class="svelte-ui-panel">
+<div id="ui-panel" class="svelte-ui-panel" transition:fade={{ duration: 400 }}>
     <div id="panel-header">
         <h1 id="panel-title">Rewir Górny</h1>
         <div id="panel-subtitle">Osiedle Górne, 1996</div>
     </div>
     
-    <div id="dialogue-scroll" class="scroll-container">
+    <div id="dialogue-scroll" class="scroll-container" bind:this={dialogueScroll}>
         <div id="dialogue-content">
             {#each currentLines as line}
                 <!-- Basic parsing of speaker tags inside text could go here -->
@@ -80,14 +88,14 @@
         {#if currentChoices.length > 0}
             <div id="choices-container">
                 {#each currentChoices as choice}
-                    <button class="choice-btn" on:click={() => makeChoice(choice.index)}>
+                    <button class="choice-btn" onclick={() => makeChoice(choice.index)}>
                         {choice.text}
                     </button>
                 {/each}
             </div>
         {:else}
             <div class="story-end">
-                <button class="story-end__restart choice-btn" on:click={closeDialogue}>Close</button>
+                <button class="story-end__restart choice-btn" onclick={closeDialogue}>Close</button>
             </div>
         {/if}
     </div>

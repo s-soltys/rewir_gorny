@@ -17,6 +17,7 @@ export class Hotspot {
         this.spriteKey = spriteKey;
         this.hideCondition = hideCondition;
         this.active = true;
+        this.cooldown = false;
         this.time = 0;
 
         this.container = scene.add.container(x, y);
