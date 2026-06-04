@@ -13,7 +13,7 @@ export const SCENES = {
         playerSpawn: { x: 0.3, y: 0.7 },
         hotspots: [
             { x: 0.7, y: 0.6, radius: 30, label: 'Examine Toy', knot: 'knot_toy_robot', spriteKey: 'sprite_toy', hideCondition: 'has_toy' },
-            { x: 0.1, y: 0.5, radius: 40, label: 'Leave Room', knot: 'knot_room_door' }
+            { x: 0.1, y: 0.5, radius: 40, label: 'Leave Room', knot: 'knot_room_door', spriteKey: 'sprite_door' }
         ],
         walkZone: [
             { x: 0.05, y: 0.20 },
@@ -30,7 +30,7 @@ export const SCENES = {
         playerSpawn: { x: 0.2, y: 0.6 },
         hotspots: [
             { x: 0.8, y: 0.4, radius: 40, label: 'Talk to Parents', knot: 'knot_parents', spriteKey: 'sprite_mom', hideCondition: 'has_hat' },
-            { x: 0.1, y: 0.5, radius: 40, label: 'Leave Flat', knot: 'knot_hallway_door' }
+            { x: 0.1, y: 0.5, radius: 40, label: 'Leave Flat', knot: 'knot_hallway_door', spriteKey: 'sprite_door' }
         ],
         walkZone: [
             { x: 0.05, y: 0.20 },

@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Character",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier (e.g. 'sailor')"
+    },
+    "name": {
+      "type": "string",
+      "description": "Display name"
+    },
+    "voice_id": {
+      "type": "string",
+      "description": "The Kokoro TTS voice preset ID to use for this character"
+    },
+    "personality_prompt": {
+      "type": "string",
+      "description": "System prompt used when generating dialogue for this character via LLMs"
+    },
+    "default_dialogue": {
+      "type": "array",
+      "description": "Initial dialogue tree nodes generated for the Ink script",
+      "items": {
+        "type": "object",
+        "properties": {
+          "knotName": { "type": "string" },
+          "text": { "type": "string" },
+          "choices": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "text": { "type": "string" },
+                "targetKnot": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "required": ["id", "name", "voice_id", "personality_prompt"]
+}

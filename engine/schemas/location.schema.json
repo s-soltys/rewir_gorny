@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Location",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the location (e.g. 'the_clearing')"
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-readable name of the location"
+    },
+    "visual_prompt": {
+      "type": "string",
+      "description": "Detailed prompt for an AI image generator to create the isometric background"
+    },
+    "hotspots": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "x": { "type": "number", "minimum": 0, "maximum": 1 },
+          "y": { "type": "number", "minimum": 0, "maximum": 1 },
+          "targetKnot": { "type": "string", "description": "The Ink knot triggered when interacted with" }
+        },
+        "required": ["id", "x", "y", "targetKnot"]
+      }
+    },
+    "walkZones": {
+      "type": "array",
+      "description": "Array of polygon points representing walkable areas",
+      "items": {
+        "type": "array",
+        "items": { "type": "number" }
+      }
+    }
+  },
+  "required": ["id", "name", "visual_prompt", "hotspots", "walkZones"]
+}

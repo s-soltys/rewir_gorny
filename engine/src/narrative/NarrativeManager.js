@@ -2,6 +2,7 @@ import { Story } from 'inkjs/engine/Story';
 import storyData from '../../../story/main.ink';
 import md5 from 'md5';
 import { eventBus } from '../EventBus.js';
+import { hasItem, checkStat, addItem, modifyStat } from '../state/gameStore.js';
 
 /**
  * Wraps the inkjs Story instance and translates Ink output into
@@ -14,6 +15,23 @@ class NarrativeManager {
         this.ink = new Story(storyData);
         this.currentScene = null;
         this.textHistory = [];
+        
+        // Bind external functions to the JS State Manager
+        this.ink.BindExternalFunction("has_item", (itemName) => {
+            return hasItem(itemName);
+        });
+        
+        this.ink.BindExternalFunction("check_stat", (statName, threshold) => {
+            return checkStat(statName, threshold);
+        });
+        
+        this.ink.BindExternalFunction("add_item", (itemName) => {
+            addItem(itemName);
+        });
+        
+        this.ink.BindExternalFunction("modify_stat", (statName, amount) => {
+            modifyStat(statName, amount);
+        });
     }
 
     /** Kick off the story (called once when GameScene starts). */
@@ -98,8 +116,8 @@ class NarrativeManager {
             const invList = this.ink.variablesState['inventory'];
             let inventoryItems = [];
             if (invList) {
-                // invList is an InkList, its items are a map where keys are "listName.itemName" or just "itemName"
-                for (let key in invList) {
+                // invList is an InkList, which behaves like a Map in inkjs
+                for (let [key, value] of invList) {
                     // skip default empty value if any
                     if (key !== 'inventory.none' && key !== 'none') {
                         inventoryItems.push(key.split('.').pop());

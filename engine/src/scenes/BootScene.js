@@ -55,6 +55,8 @@ export class BootScene extends Phaser.Scene {
 
         // Load player sprite
         this.load.image('sprite_player', '/images/sprites/sprite_player.png');
+        // Load door sprite
+        this.load.image('sprite_door', '/images/sprites/sprite_door.png');
     }
 
     create() {

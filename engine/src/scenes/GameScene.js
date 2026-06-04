@@ -4,7 +4,6 @@ import { Hotspot } from '../world/Hotspot.js';
 import { WalkZone } from '../world/WalkZone.js';
 import { SCENES, PANEL_WIDTH } from '../world/SceneData.js';
 import { narrativeManager } from '../narrative/NarrativeManager.js';
-import { dialoguePanel } from '../ui/DialoguePanel.js';
 import { AuroraEffect } from '../effects/AuroraEffect.js';
 import { eventBus } from '../EventBus.js';
 
@@ -69,9 +68,6 @@ export class GameScene extends Phaser.Scene {
             if (this.background) { this.background.destroy(); this.background = null; }
         };
         eventBus.addEventListener('story-restart', this._onRestart);
-
-        // Show the dialogue panel initially
-        dialoguePanel.show();
 
         // Start the story
         narrativeManager.start();

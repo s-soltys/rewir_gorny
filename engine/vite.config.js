@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import { execSync } from 'child_process'
 import fs from 'fs'
+import { svelte } from '@sveltejs/vite-plugin-svelte'
 
 // Custom Vite plugin to compile .ink files on the fly
 function inkPlugin() {
@@ -31,5 +32,5 @@ function inkPlugin() {
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [inkPlugin()],
+  plugins: [inkPlugin(), svelte()],
 })

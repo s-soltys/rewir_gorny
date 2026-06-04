@@ -11,29 +11,8 @@
   <!-- Phaser renders its canvas into this container -->
   <div id="game-container"></div>
 
-  <div id="ui-toggles">
-    <button id="toggle-quests-btn" class="ui-btn">Quests</button>
-    <button id="toggle-inventory-btn" class="ui-btn">Inventory</button>
-  </div>
-
-  <div id="side-panels" class="hidden">
-    <div id="quest-panel" class="status-panel"></div>
-    <div id="inventory-panel" class="status-panel"></div>
-  </div>
-
-  <!-- Right-side dialogue panel (overlaid on game canvas) -->
-  <div id="ui-panel">
-    <div id="panel-header">
-      <h1 id="panel-title">Rewir Górny</h1>
-      <div id="panel-subtitle">Osiedle Górne, 1996</div>
-    </div>
-    <div id="dialogue-scroll">
-      <div id="dialogue-content"></div>
-    </div>
-  </div>
-
-  <!-- Location indicator badge (top-left overlay) -->
-  <div id="scene-badge"></div>
+  <!-- Svelte UI will mount here -->
+  <div id="svelte-app"></div>
 
   <!-- Hidden audio element for TTS voice playback -->
   <audio id="global-audio"></audio>

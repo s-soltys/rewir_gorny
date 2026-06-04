@@ -15,10 +15,12 @@
     "vite": "^8.0.12"
   },
   "dependencies": {
+    "@sveltejs/vite-plugin-svelte": "^7.1.2",
     "dotenv": "^17.4.2",
     "inkjs": "^2.4.0",
     "md5": "^2.3.0",
     "openai": "^6.42.0",
-    "phaser": "3.90.0"
+    "phaser": "3.90.0",
+    "svelte": "^5.56.1"
   }
 }

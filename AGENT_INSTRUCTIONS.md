@@ -113,6 +113,10 @@ Always read the relevant persona doc before starting work in that domain.
 *   **Background Scaling**: Backgrounds use "cover" scaling (`Math.max(scaleX, scaleY, 1)`). If the image is smaller than the viewport, it scales up. If larger, the camera scrolls. Camera bounds always match the scaled background dimensions.
 *   **Depth Sorting**: All sprites are depth-sorted by their Y coordinate (`container.setDepth(container.y)`). This must be maintained in the update loop for correct isometric layering.
 
+*   **Ink Compilation & Vite Watcher**: The custom `inkPlugin` in `vite.config.js` only monitors the explicitly imported `.ink` file (usually `main.ink`). If you edit an included file (e.g., `loc_childhood_room.ink`), you **must** manually touch `main.ink` (e.g., `touch story/main.ink`) or run `npm run test:ink` to force a recompile. Otherwise, the live preview will serve stale story logic.
+*   **Ink List Variables**: In JavaScript, inkjs returns Ink lists (e.g., `LIST inventory`) as an `InkList` object, which inherits from `Map`. You cannot iterate over it using `for...in`. Always use `for (let [key, value] of invList)` to properly extract the items.
+*   **Ink Top-Level Knots in Includes**: If you define `=== my_knot ===` inside an included file (e.g., `loc_room.ink`), it becomes a global, top-level knot (`my_knot`), NOT a stitch scoped to the file name (`loc_room.my_knot`). Use the direct name when calling `triggerKnot()`.
+
 ---
 
 ## 7. Common Pitfalls (Learned the Hard Way)
@@ -121,6 +125,7 @@ Always read the relevant persona doc before starting work in that domain.
 *   **Modifying the DOM panel from Phaser code.** Use the EventBus, never direct DOM manipulation from scene files. The DOM UI and Phaser canvas are intentionally decoupled.
 *   **Adding new Ink variables without documenting them.** Any new `VAR` in `globals.ink` should be documented in `docs/architecture.md` and the relevant `world/` character or location file.
 *   **Assuming backgrounds are a fixed size.** They might be 1024×1024 today and 2048×1200 tomorrow. Always use normalized coordinates and dynamic scaling.
+*   **Hotspot Trigger Loops.** When walking to a hotspot to trigger dialogue, make sure to push the player back slightly or clear their movement tween. If they remain inside the trigger radius when the dialogue ends, they will instantly re-trigger it. Do not permanently `.hide()` hotspots unless the story explicitly dictates the object vanishes!
 
 ---
 
