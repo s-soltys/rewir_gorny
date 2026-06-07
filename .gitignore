@@ -15,6 +15,13 @@ Thumbs.db
 .vscode/
 .idea/
 
+# Hermes agent working files
+.hermes/
+
+# Generated cache and logs
+cache/
+log/
+
 # Env
 .env
 .env.local

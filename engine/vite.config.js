@@ -36,7 +36,9 @@ export default defineConfig({
   server: {
     allowedHosts: [
       'mai-twins-well-raid.trycloudflare.com',
-      '.trycloudflare.com'
+      '.trycloudflare.com',
+      'rewir-gorny.szymon-ai.cc',
+      '.szymon-ai.cc'
     ],
   },
 })
