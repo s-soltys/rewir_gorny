@@ -1,12 +1,23 @@
-# The Pillars of Rewir Górny
+# Thematic pillars
 
-This is a story about transitions—between eras, between youth and adulthood, between solid reality and something far more fluid. The world is built on three core pillars:
+These pillars guide the experience; they are not required exposition topics.
 
-## 1. The Heavy Nostalgia of the 1990s
-It is not the polished, neon nostalgia of American media. It is the grey, gritty, uncertain transition of post-communist Poland. *Wielka płyta* concrete blocks coexist with brightly colored plastic storefronts. Cassettes bought from folding tables at the Srebrna Góra market. The air smells of cheap tobacco, exhaust, and wet pine. It is a world trying frantically to become the future while still anchored deep in the past.
+## 1. A transition felt in daily life — CANON
 
-## 2. A Mutation of Reality
-The copper vapor is not magic, and it is not a superhero origin story. It is an environmental anomaly that mimics the psychological vertigo of the era. The world is literally dissolving. The geometry of the concrete blocks hums. Auroras of copper-green and orange weave through the streetlights. The environment is shifting in ways that only a few truly notice, or are willing to admit.
+This is not polished American 1990s nostalgia. The present is materially unsettled: concrete housing, weakened old institutions, new commerce, imported goods, and people improvising futures they cannot yet picture. Nostalgia can comfort, distort, or trap.
 
-## 3. The Amplification of the Soul
-The most terrifying aspect of the phenomenon is not what it does to the sky, but what it does to the people. The vapor is an accelerant. It takes who you are and hyper-focuses it until you become a caricature of yourself. The ambitious become ruthless. The anxious become paralyzed. The nostalgic become trapped in memory. The core tragedy is watching your friends become *too much* themselves, while you struggle to remain whole.
+## 2. Reality becomes unreliable — CANON
+
+A copper-linked environmental anomaly is associated with synesthesia, altered spatial/temporal perception, humming concrete, aurora-like colour, and a growing failure of shared certainty. It is not a religious revelation or a power fantasy. Its cause and intent remain unknown.
+
+## 3. People become more intensely themselves — CANON
+
+Exposure amplifies traits rather than replacing personalities. Loyalty can become coercion; anxiety, paralysis; ambition, ruthless opportunism; nostalgia, withdrawal from the present. Each change should grow from recognizable motives and impose costs on relationships.
+
+## 4. Factions make plausible choices under pressure — CANON as a design goal; actual factions PROVISIONAL
+
+Different groups should have evidence, practical needs, and moral arguments—not “good faction / evil faction” labels. Each strategy should protect someone and endanger someone else.
+
+## 5. The cosmic remains indifferent — CANON direction
+
+The story may connect human actions, artifacts, and historical records without solving the anomaly's ultimate ontology. The unknown should be more than a missing encyclopedia page: it should change what characters can know and do.

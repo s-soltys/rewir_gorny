@@ -1,21 +1,35 @@
-# The Copper Phenomenon
+# The copper-linked anomaly
 
-The burning of late-era industrial copper cables in the forests around Osiedle Górne releases a unique vapor. It carries a distinct, pungent, nostalgic plastic odor that settles heavily over the concrete blocks. 
+**Status:** The association between burning discarded industrial copper cable and the anomaly is CANON. The specific causal mechanism, origin, and ontology are OPEN.
 
-It doesn't cause sudden panic. The 90s are already a time of weird smells, local construction, and environmental neglect. The transition is subtle.
+## What people can observe
 
-## The Aurora Effect
-For those exposed to the smoke, the air begins to distort. The sky above Osiedle Górne ripples with shifting, iridescent curtains of color—a localized aurora borealis weaving between the sodium streetlights and the tops of the pine trees. Copper-green, burnt orange, oily magenta.
+- Burning cable insulation produces a thick, pungent plastic smell that can settle over the estate without immediately alarming people in a period of local construction and environmental neglect.
+- Some exposed people report creeping synesthesia and changes in how they perceive time, distance, and place.
+- The sky may show local curtains of copper-green, burnt orange, or oily magenta between streetlights and pine trees.
+- Concrete geometry may seem to hum; edges, shadows, routes, and spaces may no longer agree with ordinary expectation.
+- At the airfield, open mist may contain faint symbols or shapes that can be mistaken for reflections or bad visibility.
+- Continued exposure is associated with amplification of existing psychological traits; the original premise describes this amplification as permanent. The exact time course, reversibility, and variation between people remain OPEN.
 
-## A Fluid World
-As the phenomenon deepens with time and continued exposure, the environment itself feels less solid. The concrete geometry of the apartment blocks seems to hum at a low frequency. Abstract, glowing symbols float silently in the mist over the old airfield. 
+## What is established about the cable
 
-It perfectly captures the dizzying feeling of the decade: the sense that the old world is dissolving, and the new one hasn't fully solidified yet.
+Youth gather and burn discarded industrial copper cable, both for scrap value and as a social ritual. The gathering is not merely desperate survival. The project has not established where every cable came from, whether all cable behaves alike, or whether burning is a cause, a trigger, or only correlated with the anomaly.
 
-## Psychological Amplification
-The most dangerous effect of the vapor is internal. It acts as an accelerant for the soul. It introduces a slow, creeping synesthesia that permanently amplifies individual psychological traits.
+## Unknowns that must stay open
 
-In an era where everyone is trying to reinvent themselves, the copper locks people into their core traits. It hyper-focuses who they are. 
-- A naturally anxious person becomes entirely paralyzed by the infinite choices of the new decade, seeing threats in every shadow.
-- An ambitious person becomes obsessively driven, losing all sense of empathy in the pursuit of the new capitalism.
-- A nostalgic person becomes trapped in their own memories, unable to engage with the present.
+- What the anomaly is, whether it has agency, and whether it can be understood at all.
+- Whether the copper creates the effect, makes it perceptible, or has no causal role.
+- Whether the aurora is objectively visible to everyone or only experienced by some people.
+- How permanently amplified traits manifest across people, what the time course is, and how exposure changes severity.
+- Whether prior institutions documented it and what their records can actually prove.
+
+## Design guardrails
+
+- No confirmed divine, religious, extraterrestrial, military-experiment, or secret-technology explanation.
+- Characters may hold those interpretations, but each is a hypothesis with limits.
+- Reveal concrete human facts—who moved the cables, who hid records, who benefited—without resolving the underlying force.
+- Do not treat one character's account as a reliable master key. Contradictions should be patterned and seeded, not random.
+
+## PROVISIONAL story hypothesis
+
+The cable routes may trace or reveal a spatial pattern that predates the current fires. This could connect the scrap, coin, airfield maps, and impossible routes. It is a candidate twist mechanism only; it is not world canon.

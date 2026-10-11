@@ -1,22 +1,34 @@
-# The Protagonist
+# Protagonist
 
-**Age:** Early 20s
-**Background:** Grew up in Osiedle Górne, managed to get out.
-**Lives:** [University City - likely Poznań], visiting Piła on weekends/holidays.
+**Status:** PROVISIONAL profile built from the established premise.
 
-## Who They Are
-You are the one who left. You took the train out of Piła, carrying a duffel bag and a sense of superiority that you try hard to hide. You are studying in a larger city, experiencing the 90s transition through the lens of academia and bigger, brighter clubs. 
+## Established premise
 
-But you keep coming back.
+- **Age:** early twenties.
+- **Home:** grew up in Osiedle Górne and left Piła for university in a larger city.
+- **Story situation:** returns for a weekend visit after time away. The exact reason for this visit and immediate objective are OPEN.
+- **Exposure:** being away may mean less continuous exposure than friends who stayed. It does not make the protagonist immune, chosen, or uniquely protected.
 
-Because you are removed from the daily, heavy exposure of the copper smoke, you experience its effects differently. When you return, you experience the phenomenon in brief, lucid doses. You have the terrifying clarity of distance. You can see that your hometown isn't just changing culturally; its physical and psychological reality is mutating. You are caught in the classic dilemma: longing for the familiar blocks of your youth, while realizing that going home means stepping into a beautiful, unstable dream world.
+## Provisional details
 
-## Core Trait (Amplified by Copper)
-**[Player Defined / Emergent]** — Your traits are managed dynamically by the choices you make. The longer you stay in the Reviere, the louder the inner voices become.
+- **University city:** Poznań is the working guess, not yet locked.
 
-## Relationships
-- [The Gateway Friend](gateway-friend.md) — The one who brought you into the fold. The one you left behind.
-- [The Rest of the Group] — [TBD]
+## Dramatic position
+
+The protagonist longs for familiar places but sees how their memory of home and the current neighborhood fail to match. Their distance can make comparison possible, but also makes them an outsider to decisions made while they were gone.
+
+## Character questions
+
+- What do they want from this visit before the anomaly becomes undeniable?
+- What did leaving cost the Gateway Friend?
+- What do they believe about the neighborhood that their friends reject?
+- Which trait—nostalgia, perception, anxiety, or another quality—becomes destructive under pressure?
 
 ## Voice
-Internal, observant, slightly detached but deeply nostalgic. The voice of someone trying to read a map while the roads are being erased.
+
+**PROVISIONAL:** observant, slightly detached, deeply nostalgic; close sensory detail and an occasional internal voice. The former prototype used second-person present, but point of view is OPEN for the final script.
+
+## Relationships
+
+- **Gateway Friend:** brought the protagonist into the group; now the protagonist's departure and return both matter to them. Exact shared history is OPEN.
+- **Family:** the flat is a low-exposure point and a place where ordinary obligations continue. Specific family dynamics remain provisional.

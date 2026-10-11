@@ -1,14 +1,26 @@
 # The Forest Clearing
 
-**Copper Exposure:** Heavy (Epicenter)
+**Status:** PROVISIONAL location description; the gathering itself is CANON. The earlier document called it the anomaly's “source”; that causal claim is retired unless later approved.
 
-## The Place
-Just past the edge of the concrete blocks, the dense pine forest begins. The clearing is a roughly circular patch of dirt where the grass refuses to grow. In the center is a fire pit, ringed by blackened stones. This is where the ritual happens. The air here always smells of pine resin mixed with the sharp, toxic tang of burning PVC insulation. Discarded copper wire casings lie half-buried in the mud like neon synthetic worms. Someone usually brings a boombox, and the music is muffled by the thick trees.
+- **Exposure:** heavy relative to other known locations (working model).
+- **Story function:** the friends' gathering place and a visible point where the cable-burning practice, scrap economy, group belonging, and anomaly intersect.
 
-## Who's Here
-- [The Gateway Friend](../characters/gateway-friend.md)
-- The core group of cable burners
-- [TBD - Other magnified peers]
+## Place
 
-## The Aurora Here
-This is the source. The smoke rises from the fire pit, thick and green-tinged at the edges. When the fire is burning hot, the aurora effect is most visible here. Ribbons of copper-green and oily orange light thread between the branches of the pines. Time seems to drag. Conversations become disjointed. The air feels heavy, like right before a thunderstorm.
+Just beyond the concrete blocks, pine forest opens around a dirt clearing. The earlier draft describes a roughly circular bare patch, fire pit, blackened stones, and copper-wire casings half-buried in mud. A boombox and imported cassettes make the gathering ordinary before anything goes wrong.
+
+The air may combine pine resin and sharp burning-plastic smell. The fire is a practical scrap activity and a social ritual, not worship and not simply desperation.
+
+## Anomaly observations
+
+The aurora-like colours may be strongest here; conversations can disjoint, the air can feel heavy, and time may seem to drag. These are reported perceptions, not proof the clearing causes the phenomenon.
+
+## Who is here
+
+- The Gateway Friend.
+- The local cable-burning group; members and their roles are OPEN.
+- Other visitors only if a scene needs them.
+
+## Open
+
+How often cables are burned, how the group handles safety, who supplies scrap, and whether the clearing changes in a measurable way.

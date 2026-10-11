@@ -1,18 +1,23 @@
-# Piła, The 1990s
+# Piła and Osiedle Górne, 1990s
 
-The old system is dead; the new one hasn't fully arrived. Piła in the 1990s is a city caught in the slipstream of history, defined by a massive, sweeping transition. 
+**Status:** Piła / Osiedle Górne in 1990s Poland is CANON. 1996 is the working date inherited from prototype materials and remains PROVISIONAL; named real-world details should be verified before the script presents them as historical fact.
 
-## Osiedle Górne (The Upper District)
+## The transition
 
-The story is grounded in the authentic, tangible geography of Piła's Osiedle Górne. 
+The old system has fallen away; the new one has not settled. The story is grounded in the uneven, material transition of 1990s Poland: familiar institutions and workplaces weakening while imported goods, new businesses, and uncertain opportunities appear. Keep the changes visible in ordinary life rather than explaining them in lectures.
 
-### The Architecture of Change
-The neighborhood is a visual clash of eras. Large, grey concrete panel blocks (*wielka płyta*) dominate the landscape, standing like brutalist monuments to a defunct ideology. But around their bases, the rapid influx of 90s Westernization sprouts like colorful weeds: brightly colored plastic storefront signs, the chaotic stalls of the local Srebrna Góra market, and the early wave of imported, secondhand German cars parked haphazardly on cracked pavement.
+## The neighbourhood
 
-### The Borderlands
-The action takes place on the physical edges of the estate. These are the spaces where the urban grid surrenders to the wild. Characters frequent the vast, open, overgrown spaces near the old military airfield (*lotnisko*) and the deep, dense pine forests that bleed right up to the edges of the housing blocks. It is in these liminal spaces that the rules of reality begin to fray.
+Osiedle Górne is the project's geographic anchor. *Wielka płyta* blocks stand beside brightly coloured shop signs, informal market stalls associated in the project notes with Srebrna Góra, and secondhand German cars. The concrete is not generic scenery: stairwells, courtyards, kiosks, paths, and windows shape who sees or avoids whom.
 
-### The Social Ritual
-In the clearing just past the concrete blocks, youths gather. They are the children of former state employees, military families from the nearby base, and kids trying to hustle their first private businesses. They come here to burn discarded industrial copper cables, stripping the PVC insulation for the scrap value of the metal. 
+At the edge of the housing estate, the built environment gives way to pine woods and an old military airfield. The forest clearing is the youth group's gathering place. The exact street layout, market details, airfield history, and period-specific brands/radio references remain OPEN for research.
 
-But it's not a desperate act of poverty. It's a casual, gritty subculture. A ritual. They sit in the dirt, listening to imported cassettes, talking about a future they can't quite picture, watching the green-and-orange flames of the burning insulation rise into the dusk.
+## Social texture
+
+The youth group spans children of former state employees, military families, and young people trying to start private businesses. Cable burning brings together scrap value, boredom, belonging, and the need to make something of the new economy. It is not framed only as destitution.
+
+The tone is lived-in rather than postcard nostalgia: damp plaster, cheap tobacco, exhaust, wet pine, dubbed television, cassette music, and cheap improvised repairs. Use details that reveal a character or an incentive; do not add period decoration merely to signal “the 90s.”
+
+## Geographic continuity rule
+
+The project is set in Piła. Earlier repository text incorrectly described it as Upper Silesia / Górny Śląsk; that label is retired. Do not import Silesian regional markers without a deliberate, fact-checked reason. Verify specific Piła history and language/cultural detail before treating it as canon.

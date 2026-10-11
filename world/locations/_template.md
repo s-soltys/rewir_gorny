@@ -1,12 +1,24 @@
-# [Location Name]
+# Location template
 
-**Copper Exposure:** [None / Light / Medium / Heavy]
+**Status:** OPEN / PROVISIONAL / CANON.
 
-## The Place
-[Atmospheric description. Senses first: what you smell, hear, then what you see. Describe it like it has a mood. What are the textures? Concrete, wet leaves, rusted metal?]
+- **Geographic placement:**
+- **Exposure model:** OPEN / minimal / low / medium / heavy (relative, not a medical measurement)
+- **Story function:**
+- **Who uses or avoids it:**
 
-## Who's Here
-[Characters found here and under what circumstances.]
+## Physical and social reality
+- **Sensory anchors:** smell, sound, texture, temperature, then visual detail.
+- **Ordinary activity:**
+- **What has changed since the old system:**
+- **What people disagree about here:**
 
-## The Aurora Here
-[How does reality distort in this specific place, if at all? What does the copper vapor do to the geometry or the light?]
+## Anomaly observations
+- **What can be directly observed:**
+- **What characters infer:**
+- **What remains unknown:**
+
+## Story use
+- **Goal/conflict/clue/choice:**
+- **Route in and out:**
+- **Continuity or research needed:**

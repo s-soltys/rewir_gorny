@@ -1,13 +1,22 @@
-# The Blocks (Wielka Płyta)
+# The Blocks (*wielka płyta*)
 
-**Copper Exposure:** Medium
+**Status:** PROVISIONAL sensory/location profile based on existing world notes.
 
-## The Place
-The grey concrete panel blocks dominate the landscape. They were built to house the workers of a socialist utopia that ran out of money. Now, they are monuments to a transition nobody fully understands. The stairwells smell of boiled cabbage, floor wax, and damp plaster. The elevators are unreliable metal cages covered in scratched graffiti. Outside, the grass is patchy, beaten down by kids playing football. The wind always seems to channel between the buildings, carrying the distant sound of a dog barking and a television playing a dubbed American action movie.
+- **Exposure:** medium in the earlier working model; relative and not measured.
+- **Story function:** the social core of Osiedle Górne, where family routine, work history, neighbors, and the anomaly overlap.
 
-## Who's Here
-- Everyone from the old neighborhood.
-- [TBD - Specific residents]
+## Place
 
-## The Aurora Here
-The blocks act like tuning forks for the copper vapor. At high exposure, the concrete geometry seems to hum at a low frequency. The edges of the buildings vibrate slightly against the sky, as if the physical world is struggling to maintain its resolution. The sodium streetlamps cast long, distorted shadows that don't quite align with the objects casting them.
+Grey concrete panel blocks built during the socialist period. Stairwells may smell of boiled cabbage, floor wax, and damp plaster. The old draft describes unreliable elevators, scratched graffiti, patchy football grass, and wind channeling between buildings. Treat these as atmospheric prompts; verify specific details before claiming them as factual Piła observations.
+
+## Anomaly observations
+
+At higher exposure, residents may report low-frequency humming, building edges that seem to vibrate, or sodium-lamp shadows that do not quite align. Residents can disagree about whether this is physical, perceptual, or remembered.
+
+## Who is here
+
+Residents, families, children, returning students, informal sellers, and people connected to former workplaces. Named residents remain to be developed.
+
+## Open
+
+Specific building/street references, period conditions, and which scenes require access to communal interiors.

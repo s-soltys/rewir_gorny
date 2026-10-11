@@ -1,14 +1,22 @@
-# The Old Airfield (Lotnisko)
+# The Old Airfield (*lotnisko*)
 
-**Copper Exposure:** Light to Medium
+**Status:** Location concept is CANON as part of the setting; exact historical description is OPEN pending research.
 
-## The Place
-A vast, open expanse of cracked asphalt being slowly reclaimed by weeds and birch saplings. It's the old military airfield, a relic of the Soviet era. Now, it's a vast empty space on the edge of the city. The wind whips across the runway, carrying the scent of dust and distant rain. In the distance, you can see the rusted husks of hangars. It's a popular spot for teenagers to learn how to drive imported German cars, or just to sit on the hood and drink cheap beer in the dark.
+- **Exposure:** light to medium in the earlier world-bible model.
+- **Story function:** open edge-space for driving, isolation, and the most abstract spatial observations.
 
-## Who's Here
-- Teenagers with cars.
-- People seeking isolation from the dense blocks.
-- [TBD]
+## Place
 
-## The Aurora Here
-Because it's a wide open space, the effects of the copper vapor are less concentrated but more abstract. The mist that rolls over the cracked asphalt at night occasionally glows with faint, floating symbols. It's subtle enough that you can convince yourself it's just a trick of the moonlight reflecting off broken glass, but deep down, you know the geometry of the air itself is wrong.
+A large open area of cracked asphalt being reclaimed by weeds and young trees. The previous draft included hangars, teenagers learning to drive imported cars, and people sitting on car hoods. Keep these as visual leads until the actual site's history and access are verified.
+
+## Anomaly observations
+
+Mist or poor visibility may appear to contain faint symbols or impossible alignments. Openness changes what can be seen; it does not mean the airfield is the source.
+
+## Evidence and uncertainty
+
+A future plot may use old maps or maintenance records as evidence that people noticed anomalies before the present group. This is a PROVISIONAL plot device. It must not claim the airfield caused the phenomenon or had a secret experiment unless the story later chooses and supports that version.
+
+## Research needed
+
+Verify the airfield's period use, ownership, structures, and relationship to the neighborhood before adding real-world historical claims.

@@ -1,17 +1,30 @@
-# [Name]
+# Character template
 
-**Age:** [Age in the 1990s]
-**Background:** [e.g., military family, state employee's kid, aspiring entrepreneur]
-**Lives:** [Link to location in Osiedle Górne or elsewhere]
+**Status:** OPEN / PROVISIONAL / CANON.
 
-## Who They Are
-[A paragraph or two describing their personality, their hopes, their fears. Write it evocatively. How do they walk? What kind of jacket do they wear? What cassettes do they listen to?]
+## Dramatic function
+- **Age / background:**
+- **Home / daily life:**
+- **What they want:**
+- **What they fear losing:**
+- **What they know (and cannot know):**
 
-## Core Trait (Amplified by Copper)
-**[Trait Name]** — [Describe what happens to them as the copper vapor takes hold. How does their core trait become magnified to a tragic or fascinating extreme?]
+## Pressure and change
+- **Trait or coping habit:**
+- **How it intensifies under stress/exposure:**
+- **What harm it can cause:**
+- **What evidence might change their mind:**
 
 ## Relationships
-- [Link to another character] — [Brief description of the dynamic]
+- **Protagonist:**
+- **Other key ties:**
 
-## Voice
-[How do they sound? Do they use specific 90s slang? Do they speak in short, clipped sentences, or long, rambling monologues?]
+## Voice and behaviour
+- **How they speak:**
+- **Repeated gesture/object/routine:**
+- **One contradiction that makes them human:**
+
+## Continuity
+- **First appearance / plot function:**
+- **Facts requiring historical or cultural verification:**
+- **Open questions:**

@@ -1,17 +1,29 @@
 # The Gateway Friend
 
-**Age:** Early 20s
-**Background:** [TBD - Working class Piła native?]
-**Lives:** [The Blocks](../locations/the-blocks.md)
+**Status:** PROVISIONAL profile based on the earlier character concept.
 
-## Who They Are
-The peer who originally hung out by the forest fire pits and introduced you to the group. They were the anchor, the one who knew everyone's name and how to get cheap beer from the Srebrna Góra market. They always wore that oversized, faded denim jacket. They felt like the solid center of Osiedle Górne.
+## Working profile
 
-## Core Trait (Amplified by Copper)
-**Solidarity / Tribalism** — As the reality-shifting effects take hold, their natural loyalty warps into a desperate, paranoid tribalism. They become unable to let anyone leave the group. The fragmentation of your friend circle terrifies them, and they react by trying to pull everyone closer, into the smoke, into the shared hallucination. Their role naturally recedes as their obsession isolates them, leaving you to navigate the consequences.
+- **Age:** early twenties.
+- **Background:** Piła native; working-class background is an unverified draft assumption.
+- **Home:** likely one of the blocks near Osiedle Górne.
+- **Role:** peer who introduced the protagonist to the cable-burning group and once held the friends together socially.
+- **Visual detail:** oversized, faded denim jacket is a draft motif, not yet locked.
 
-## Relationships
-- [The Protagonist](protagonist.md) — They brought you in. Now they resent you for leaving, even as they beg you to stay.
+## Trait and change
+
+Their strength is solidarity: knowing everyone's name, making sure the group has somewhere to go, and noticing when someone is absent. Under stress and possible copper exposure, that loyalty may harden into a need to prevent anyone leaving. It can be protective and coercive at once. Do not make them merely “corrupted” or irrational; their fear of losing the group must have a real history.
+
+## Relationship with the protagonist
+
+They brought the protagonist into the group; the protagonist later left. They may resent that departure while still wanting the protagonist back. Whether they asked the protagonist to return, and what happened the last time they met, are OPEN.
 
 ## Voice
-Casual, authentic. Short sentences, heavy on 90s Polish slang. They avoid deep topics, preferring to deflect with a joke or a cigarette. But underneath, there's a growing, frantic edge.
+
+**PROVISIONAL:** casual, short, guarded; deflects serious questions with jokes or cigarettes. Polish slang should be researched and used sparingly, not invented as generic local colour. Their growing urgency should show through repeated practical demands, not villain speeches.
+
+## Questions
+
+- What did the friend do for the protagonist before they left?
+- What boundary will they cross to keep the group together?
+- What evidence would make them change course?

@@ -1,27 +1,28 @@
-# Dependencies
+# Dependencies and build output
 node_modules/
+dist/
+build/
 
-# Build artifacts
-engine/story.json
+# Godot cache/imports and exports (game implementation is a later phase)
+.godot/
+.export/
+*.import
 
-# OS
+# OS / editor
 .DS_Store
 Thumbs.db
-
-# Editor
 *.swp
 *.swo
 *~
 .vscode/
 .idea/
 
-# Hermes agent working files
+# Hermes working files and local artifacts
 .hermes/
-
-# Generated cache and logs
 cache/
 log/
 
-# Env
+# Environment files
 .env
-.env.local
+.env.*
+!.env.example

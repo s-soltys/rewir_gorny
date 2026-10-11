@@ -1,162 +1,39 @@
-# Rewir Górny — Style Guide
+# Writing guide — provisional
 
-Writing conventions for Disco Elysium-style interactive prose set in 1990s Upper Silesia.
+**Status:** craft guidance, not immutable style law. The former guide's second-person voice and sensory-first approach are useful defaults; confirm perspective before drafting the final script.
 
----
+## Voice and atmosphere
 
-## Voice & Perspective
+- Ground the uncanny in bodily, ordinary details: damp plaster, wet pine, cable smoke, cold railings, a bus timetable, cheap tea.
+- Let the ordinary setting carry the grimdark. Scarcity, bad incentives, abandoned institutions, coercive loyalty, and irreversible consequences matter more than constant gore.
+- Keep the anomaly indifferent and unexplained. It does not speak in prophecies, reward believers, or select a chosen character.
+- Use short sentences for impact and longer passages for pressure or memory. Cut metaphors that do not reveal character, alter perception, or advance the scene.
+- Avoid generic “Eastern European” shorthand. Piła is the anchor; verify specific local details rather than inventing brands, history, or regional speech.
 
-**Second person, present tense. Always.**
+## Point of view — OPEN
 
-> You push the door. The hinges protest — a wet, grinding sound that lives somewhere between a cough and a prayer.
+The old prototype used second-person present. It may remain a good fit for intimacy and unreliable perception, but it is not locked. Do not rewrite the project into first or second person without recording the decision.
 
-You are narrating the player's inner experience. Not telling them what happened. Telling them what is happening *to them*, *inside them*, right now.
+## Dialogue and faction voices
 
----
+- Each person speaks from their position, material needs, and what they can know.
+- Give factions distinct vocabularies: trade, maintenance/containment, and peer-group loyalty should not sound like one author explaining the lore.
+- Characters may be wrong about causes while accurately describing what happened to them.
+- Avoid exposition speeches. Let the player compare reports, objects, places, and consequences.
 
-## Paragraph Rhythm
+## Choices
 
-Mix short and long. Alternate punches with poetry.
+A choice may change plot consequences, express a theme, or define the protagonist's relationship/identity. Not every choice needs a unique branch. Prefer a few choices whose results are visible later over many branches that immediately reconverge.
 
-**Short** — for impact, for choices, for the moment before something changes:
+Choices should be actions or spoken lines, not menu labels. Include silence only when it changes the relationship or scene pressure.
 
-> The glass is empty.
+## Mystery and twists
 
-> You don't remember filling it.
+- Plant a clue before the reveal; list its first reading and later reading in `docs/narrative/revelation-map.md`.
+- Let the reveal connect prior evidence and change the player's model of events.
+- Preserve a remainder that cannot be explained. “Unknown” is a deliberate boundary, not a missing answer to fill with lore.
+- No twist may invalidate a character's justified motives or make all previous evidence meaningless.
 
-**Long** — for atmosphere, for the world pressing in, for when the character's mind spirals:
+## Trait interjections — provisional device
 
-> The sodium light bleeds through the window in long amber fingers, painting the linoleum in the color of old photographs, of wedding receptions in community halls, of everything that used to be warm before the factories went quiet and the warmth had nowhere left to go.
-
-**The rule**: never more than two long paragraphs in a row. Break them with a short one. Give the reader air.
-
----
-
-## Sensory-First Descriptions
-
-Smell → Sound → Texture → Temperature → *then* visual.
-
-The eyes are lazy. They take in everything but feel nothing. Lead with the senses that make the reader's body react.
-
-**Good:**
-> The stairwell smells like boiled cabbage and concrete dust. Somewhere above you, a radio plays — tinny, distorted, a woman's voice singing about a love that sounds like it died in 1987. The handrail is cold under your palm. Ice-cold. Like it's been waiting for you.
-
-**Bad:**
-> You see a grey stairwell. There are stairs going up. The walls are concrete. It's a typical Eastern European apartment building.
-
-The first version puts you *inside* the space. The second describes a photograph.
-
----
-
-## Trait Interjections
-
-These are inner voices — aspects of the protagonist's psyche that comment on what's happening. They are formatted as:
-
-```
-TRAIT_NAME: The interjection text.
-```
-
-The engine detects lines starting with `NOSTALGIA:`, `PERCEPTION:`, or `ANXIETY:` and renders them with distinct styling.
-
-### NOSTALGIA
-**Tone**: Wistful, aching, sometimes treacherously beautiful. Nostalgia lies — it makes the past glow warmer than it was. It speaks in half-remembered sensory fragments.
-
-```
-NOSTALGIA: This is the smell of your grandmother's kitchen. Flour and lard and Radio Katowice playing in the other room. You were six. You were safe.
-```
-
-```
-NOSTALGIA: It wasn't like this before. The courtyard had flowers. Someone cared enough to plant marigolds along the path. Who was it? Does it matter now?
-```
-
-### PERCEPTION
-**Tone**: Clinical, precise, occasionally unsettling. Perception notices what the conscious mind tries to ignore. It reads spaces, objects, and people like evidence.
-
-```
-PERCEPTION: Three cigarette butts by the door. Different brands. Someone has been waiting here — and they weren't alone.
-```
-
-```
-PERCEPTION: The water stain on the ceiling is shaped like a hand. Five fingers spread wide. Reaching for something. Or letting go.
-```
-
-### ANXIETY
-**Tone**: Urgent, catastrophic, breathless. Anxiety spirals. It takes one small detail and extrapolates it into the worst possible outcome. Short sentences. Sentence fragments. Questions that don't want answers.
-
-```
-ANXIETY: They're watching. From the window across the courtyard. Third floor. The curtain moved. You saw it move. Why did it move?
-```
-
-```
-ANXIETY: You're going to say the wrong thing. You always say the wrong thing. Your mouth is going to open and something terrible will come out and they'll know. They'll all know.
-```
-
-### Rules for trait interjections
-- One trait per line. Never combine traits in a single interjection.
-- Keep them to 1–3 sentences. They're interruptions, not monologues.
-- They should feel involuntary — thoughts the protagonist didn't choose to have.
-- Space them out. Maximum 2–3 per passage. More and they lose impact.
-- They can contradict each other. Nostalgia says the past was beautiful. Anxiety says you ruined it. That tension is the point.
-
----
-
-## Dialogue
-
-Dialogue uses quotation marks. Speaker attribution goes on a separate line or is woven into action.
-
-```
-"You're not from here." The woman behind the counter doesn't look up. Her fingers keep sorting through the receipts.
-
-> * "I used to be."
-> * "Does it matter?"
-> * Say nothing. Let the silence answer.
-```
-
-**Rules:**
-- No dialogue tags like "she said angrily." Show the emotion through action, gesture, or silence.
-- People in this world speak in short, guarded sentences. Trust is expensive.
-- Mix Polish phrases naturally when it serves the atmosphere. Don't overdo it.
-- Silence is a valid response. Always offer it as a choice.
-
----
-
-## Writing for Choices
-
-Choices are actions, not summaries. They should feel like reaching out and *doing* something.
-
-**Good:**
-```
-> * Reach for the photograph on the mantelpiece.
-> * "Tell me about the factory."
-> * Leave. You've heard enough.
-```
-
-**Bad:**
-```
-> * Ask about the photo.
-> * Learn about the factory.
-> * Exit the conversation.
-```
-
-The first set makes the player feel their body move. The second reads like a menu.
-
----
-
-## World Details
-
-- **Place**: Upper Silesia (Górny Śląsk), 1996. Post-industrial. Post-hope, pre-whatever comes next.
-- **Architecture**: Concrete panel buildings (bloki), mine structures, communist-era public buildings with faded grandeur.
-- **Weather**: Overcast. Always. The sky is a ceiling.
-- **Light**: Sodium lamps. Amber. Everything is amber at night.
-- **Economy**: The mines are closing. The factories are silent. People are figuring out what to do with their hands.
-- **Culture**: A mix of Polish and Silesian identity. Football, allotment gardens, church on Sunday, vodka on Saturday.
-
----
-
-## Common Mistakes to Avoid
-
-1. **Over-explaining**. Trust the reader. "The building was abandoned, empty, with no one living there anymore." → "The building was hollow."
-2. **Purple prose without purpose**. Every poetic line should do work — establish mood, reveal character, or advance the scene.
-3. **Forgetting the body**. The protagonist has hands, a stomach, a spine. They feel cold, hunger, tension in their jaw. Use it.
-4. **Generic post-communist setting**. This is *Silesia*, not "Eastern Europe." Be specific. Name streets, brands, radio stations, foods.
-5. **Trait interjections that just repeat the narration**. They should add a *new layer* — a memory, a fear, an observation the narration missed.
+NOSTALGIA, PERCEPTION, and ANXIETY appeared in the prototype. Retain them only if they deepen a moment, contradict one another, and reflect the copper's amplification. They are not mandatory RPG attributes or a substitute for character voice.
